@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>xty // archivo sonoro</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#050505;
+    color:#00ff66;
+    font-family:"Courier New", monospace;
+    overflow-x:hidden;
+}
+
+
+/* fondo con ruido */
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at center,#102010,#000);
+    z-index:-2;
+}
+
+
+/* líneas CRT */
+body:after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    repeating-linear-gradient(
+        0deg,
+        rgba(0,255,100,0.05),
+        rgba(0,255,100,0.05) 1px,
+        transparent 2px
+    );
+    pointer-events:none;
+}
+
+
+/* pantalla inicial */
+
+.boot{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+}
+
+
+.logo{
+
+font-size:60px;
+letter-spacing:20px;
+
+animation:glitch 2s infinite;
+
+}
+
+
+@keyframes glitch{
+
+0%{
+text-shadow:2px 0 red;
+}
+
+50%{
+text-shadow:-2px 0 cyan;
+}
+
+100%{
+text-shadow:2px 0 red;
+}
+
+}
+
+
+button{
+
+margin-top:30px;
+padding:15px 30px;
+
+background:black;
+border:1px solid #00ff66;
+
+color:#00ff66;
+
+font-family:inherit;
+
+cursor:pointer;
+
+}
+
+
+button:hover{
+
+background:#00ff66;
+color:black;
+
+}
+
+
+/* contenido */
+
+main{
+
+display:none;
+padding:40px;
+max-width:900px;
+margin:auto;
+
+}
+
+
+h2{
+
+border-bottom:1px solid #00ff66;
+padding-bottom:10px;
+
+}
+
+
+.card{
+
+border:1px solid #114422;
+padding:20px;
+margin:20px 0;
+
+background:rgba(0,255,100,0.03);
+
+}
+
+
+a{
+
+color:#00ffff;
+
+}
+
+
+.sound{
+
+border:1px dashed #00ff66;
+padding:15px;
+
+}
+
+
+footer{
+
+margin-top:80px;
+opacity:.6;
+
+}
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<section class="boot">
+
+<div class="logo">
+XTY
+</div>
+
+<p>
+INITIALIZING SONIC ARCHIVE...
+</p>
+
+<button onclick="enter()">
+ENTER SYSTEM
+</button>
+
+</section>
+
+
+
+<main id="system">
+
+
+<h1>
+// ARCHIVO SONORO
+</h1>
+
+<p>
+Entidad experimental de ruido, materia y memoria.
+<br>
+VR · electrónica DIY · ecologías audibles · realidades extendidas
+</p>
+
+
+
+<h2>
+PROJECTS_
+</h2>
+
+
+<div class="card">
+
+<h3>
+MAMITAS VR
+</h3>
+
+<p>
+Archivo inmersivo sobre memorias migrantes
+de mujeres mayores del Perú.
+Stop motion, VR y paisajes sonoros.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+PLASTICOSTRAS
+</h3>
+
+<p>
+Investigación sonora de residuos marinos,
+plastiglomerados y objetos huérfanos.
+Circuitos DIY como dispositivos de escucha.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+DESPEJO
+</h3>
+
+<p>
+Instalación audiovisual multicanal sobre
+memoria colectiva, protesta y territorio.
+</p>
+
+</div>
+
+
+
+<h2>
+AUDIO FIELD RECORDINGS_
+</h2>
+
+
+<div class="sound">
+
+<audio controls>
+
+<source src="audio/campo.mp3">
+
+</audio>
+
+<p>
+// costa herida // ventanilla // 2026
+</p>
+
+</div>
+
+
+
+<h2>
+MANIFIESTO_
+</h2>
+
+
+<p>
+
+Trabajo con sonidos residuales, tecnologías
+abandonadas y materias heridas.
+Busco escuchar aquello que queda fuera:
+objetos sin voz, territorios contaminados,
+memorias desplazadas.
+
+</p>
+
+
+
+<h2>
+CONTACT_
+</h2>
+
+<p>
+
+mail:
+<a href="#">
+tuemail@correo.com
+</a>
+
+<br><br>
+
+social:
+<a href="#">
+mastodon / instagram / etc
+</a>
+
+</p>
+
+
+
+<footer>
+
+SYSTEM STATUS:
+ONLINE
+
+<br>
+
+© xty // archivo vivo
+
+</footer>
+
+
+</main>
+
+
+
+
+<script>
+
+function enter(){
+
+document.querySelector(".boot").style.display="none";
+
+document.querySelector("#system").style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
